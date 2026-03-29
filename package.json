@@ -1,0 +1,33 @@
+{
+  "name": "dating-app",
+  "version": "1.0.0",
+  "description": "A scalable dating app backend with authentication, KYC verification, swipe-based matching, and secure chat system. Built with Node.js, Express, MongoDB, Redis, and JWT with rate limiting and validation.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaif9756/dating-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kaif9756/dating-app/issues"
+  },
+  "homepage": "https://github.com/kaif9756/dating-app#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.3",
+    "multer": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
