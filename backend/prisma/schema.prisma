@@ -16,7 +16,13 @@ model User {
   gender        String?
   bio           String?
   location      String?
+
+  role         String   @default("user") // user, admin
+
   isProfileComplete Boolean @default(false)
+
+  kycStatus     String   @default("pending") // pending, approved, rejected
+  kycVideoUrl   String?
 
   photos        Photo[]
 

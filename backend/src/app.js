@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/user.routes.js';
 import photoRoutes from './routes/photo.routes.js';
+import kycRoutes from './routes/kyc.routes.js';
+import admin from './routes/admin.routes.js';
 
 dotenv.config();
 
@@ -14,6 +16,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/photo", photoRoutes);
+app.use("/api/kyc", kycRoutes);
+app.use("/api/admin", admin);
 
 
 export default app;
