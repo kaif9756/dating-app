@@ -24,6 +24,4 @@ const router = express.Router();
  */
 router.post("/:userId", protect, blockUser);
 
-router.post("/:userId", protect, blockUser);
-
 export default router;
