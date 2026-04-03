@@ -21,7 +21,7 @@ model User {
 
   isProfileComplete Boolean @default(false)
 
-  kycStatus     String   @default("pending") // pending, approved, rejected
+  kycStatus     String   @default("UNDER_REVIEW") // pending, approved, rejected
   kycVideoUrl   String?
 
   photos        Photo[]

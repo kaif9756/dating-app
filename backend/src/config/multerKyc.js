@@ -5,7 +5,11 @@ const storage = multer.diskStorage({
     cb(null, "uploads/kyc/");
   },
   filename: (req, file, cb) => {
-    const uniqueName = Date.now() + "-" + file.originalname;
+    const version = "v1";
+    const uniqueName = `${version}-${Date.now()}-${Math.round(
+      Math.random() * 1e9
+    )}.mp4`;
+
     cb(null, uniqueName);
   },
 });
@@ -20,10 +24,10 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-const uploadKyc = multer({
+const uploadKycMiddleware = multer({
   storage,
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB
+  limits: { fileSize: 20 * 1024 * 1024 },
   fileFilter,
 });
 
-export default uploadKyc;
+export default uploadKycMiddleware;

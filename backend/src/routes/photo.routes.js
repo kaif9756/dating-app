@@ -7,10 +7,10 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/photo/upload:
+ * /media/upload-photo:
  *   post:
  *     summary: Upload user photo
- *     tags: [Photo]
+ *     tags: [Media]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -28,6 +28,6 @@ const router = express.Router();
  *         description: Photo uploaded
  */
 
-router.post("/upload", protect, upload.single("photo"), uploadPhoto);
+router.post("/upload-photo", protect, upload.single("photo"), uploadPhoto);
 
 export default router;

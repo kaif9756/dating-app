@@ -1,6 +1,6 @@
 import prisma from "../config/prisma.js";
 
-export const uploadKyc = async (req, res) => {
+export const uploadKycController = async (req, res) => {
   try {
     const userId = req.user.userId;
 
@@ -14,12 +14,12 @@ export const uploadKyc = async (req, res) => {
       where: { id: userId },
       data: {
         kycVideoUrl: req.file.path,
-        kycStatus: "pending",
+        kycStatus: "UNDER_REVIEW",
       },
     });
 
     res.json({
-      message: "KYC uploaded, waiting for approval",
+      message: "KYC uploaded successfully",
       kycStatus: user.kycStatus,
     });
   } catch (error) {

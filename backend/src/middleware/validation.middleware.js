@@ -34,7 +34,7 @@ export const requireValidUser = async (req, res, next) => {
     // 3. KYC check
     if (user.kycStatus !== "approved") {
       return res.status(403).json({
-        message: "KYC not approved",
+        message: "Upload KYC first",
       });
     }
 

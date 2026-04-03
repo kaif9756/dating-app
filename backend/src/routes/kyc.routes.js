@@ -1,5 +1,5 @@
 import express from "express";
-import { uploadKyc } from "../controllers/kyc.controller.js";
+import { uploadKycController } from "../controllers/kyc.controller.js";
 import { protect } from "../middleware/auth.middleware.js";
 import uploadKycMiddleware from "../config/multerKyc.js";
 
@@ -7,10 +7,10 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/kyc/upload:
+ * /media/upload-kyc:
  *   post:
  *     summary: Upload KYC video
- *     tags: [KYC]
+ *     tags: [Media]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -27,8 +27,6 @@ const router = express.Router();
  *       200:
  *         description: KYC uploaded
  */
-
-
-router.post("/upload", protect, uploadKycMiddleware.single("video"), uploadKyc);
+router.post("/upload-kyc", protect, uploadKycMiddleware.single("video"), uploadKycController);
 
 export default router;
